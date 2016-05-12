@@ -19,7 +19,7 @@ class App extends Component {
 
     ReactDOM.findDOMNode(this.refs.textInput).value = '';
   }
-  
+
   renderTasks() {
     return this.props.tasks.map((task) => (
       <Task key={task._id} task={task} />
@@ -52,9 +52,9 @@ class App extends Component {
 App.propTypes = {
   tasks: PropTypes.array.isRequired
 };
-
+//Data container
 export default createContainer(() => {
   return {
-    tasks: Tasks.find({}).fetch()
+    tasks: Tasks.find({}, { sort: { createdAt: -1 } }).fetch()
   };
 }, App);
