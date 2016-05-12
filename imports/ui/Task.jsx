@@ -35,7 +35,7 @@ export default class Task extends Component {
         />
 
         { this.props.showPrivateButton ? (
-          <button className='toggle-private' onClick={this.togglePrivate.bind(this)}>
+          <button className='toggle-private mdl-button mdl-js-button mdl-button--raised mdl-button--colored' onClick={this.togglePrivate.bind(this)}>
             { this.props.task.private ? 'Private' : 'Public'}
           </button>
         ) : ''}
